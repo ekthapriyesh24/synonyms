@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="style.css">  
         <script src="dictionary.js"></script>
     </head>
     <body>
-        <h1 id="demo">answer</h1>
-        Input word:<br>
-        <input type="text" id="word"><br>
-        <button onclick="add()">Click</button>
+        <div id="inputbar">
+            <p id="in">Enter Word</p><br>
+            <input type="text" id="word"><br>
+            <button id="press" onclick="add()"></button><br>
+            <p id="sw">Synonyms:</p>
+            <p id="demo"></p>
+        </div>
     </body>
 </html>
