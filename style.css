@@ -47,3 +47,10 @@ body {
   {
     border-color: rgb(19, 123, 241);
   }
+  ul
+  {
+    position: relative;
+    font-size: 35px;
+    top: 250px;
+    left: 800px;
+  }
