@@ -1,3 +1,6 @@
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
 function httpGetAsync(theUrl, callback)
 {
     var xmlHttp = new XMLHttpRequest();
