@@ -1,3 +1,6 @@
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
 function httpGetAsync(theUrl, callback)
 {
     var xmlHttp = new XMLHttpRequest();
@@ -23,18 +26,28 @@ i=1;
 }
 function createlist(fi)
 {
-    if(document.getElementsByTagName("UL")[0]!=null)
+    if(document.getElementById("tl")!=null)
     {
-        var f=document.getElementsByTagName("UL")[0];
+        var f=document.getElementById("tl");
         f.parentNode.removeChild(f);
     }
-var list = document.createElement("ul");
+var list = document.createElement("div");
+var att = document.createAttribute("class");
+var att2 = document.createAttribute("id");
+att.value = "list-group";
+att2.value = "tl";
+list.setAttributeNode(att2);
+list.setAttributeNode(att);
 for (var i in fi) {
   var anchor = document.createElement("a");
+  var att4 = document.createAttribute("href");
+  att4.value = "#";
+  anchor.setAttributeNode(att4);
   anchor.innerText = fi[i];
-  var elem = document.createElement("li");
-  elem.appendChild(anchor);
-  list.appendChild(elem);
+  var att1 = document.createAttribute("class");
+  att1.value = "list-group-item list-group-item-action text-center text-light bg-dark";
+  anchor.setAttributeNode(att1);
+  list.appendChild(anchor);
 }
 document.body.appendChild(list);
 }

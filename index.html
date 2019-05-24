@@ -1,16 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <link rel="stylesheet" type="text/css" href="style.css">  
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css"> 
         <script src="dictionary.js"></script>
     </head>
     <body>
-        <div id="inputbar">
-            <p id="in">Enter Word</p><br>
-            <input type="text" id="word"><br>
-            <button id="press" onclick="add()"></button><br>
-            <p id="sw">Synonyms:</p>
-            <div id="demo"></div>
+        <div class="container-fluid" id="inputbar">
+            <div class="jumbotron">
+                    <div class="progress">
+                            <div class="progress-bar bg-success" style="width:33%"></div>
+                            <div class="progress-bar bg-warning" style="width:33%"></div>
+                            <div class="progress-bar bg-danger" style="width:33%"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-danger" style="width:33%"></div>
+                        <div class="progress-bar bg-success" style="width:33%"></div>
+                        <div class="progress-bar bg-warning" style="width:33%"></div>
+                    </div>
+                    <div class="flex-container">
+                        <div class="spinner-border text-warning"></div>
+                        <div class="spinner-border text-success"></div>
+                        <div class="spinner-border text-danger"></div>
+                    </div>
+            <blockquote class="blockquote">
+                    <pre class="flex-container text-light bg-dark font-weight-bold font-italic">“The dictionary is based on the hypothesis
+-- obviously an unproven one --
+that languages are made up of equivalent synonyms.”</pre>
+                    <footer class="flex-container blockquote-footer">― Jorge Luis Borges</footer>
+            </blockquote>
+            </div>
+            <div class="jumbotron">
+                    <div class="flex-container">
+                        <label for="usr" data-toggle="tooltip" class="display-4 text-light bg-dark" id="in" title="words for which synonyms are required" data-placement="top">Enter Word</label>
+                    </div>
+                    <div class="flex-container">
+                        <input type="text" class="m-2 form-control" id="word">
+                    </div>
+                            <div class="flex-container m-2 custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="switch1">
+                                <label class="custom-control-label" for="switch1">05 synonyms</label>
+                            </div>
+                            <div class="flex-container m-2 custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" id="switch2">
+                                <label class="custom-control-label" for="switch2">10 synonyms</label>
+                            </div>
+                            <div class="flex-container ini">
+                                <button data-toggle="collapse" data-target="#disp-data" type="button" class="flex-container m-4 btn btn-outline-success" id="press" onclick="add()">Submit</button>
+                                <div class="collapse show" id="disp-data">Click submit to see a list of synonyms</div> 
+                            </div>    
+            </div>
+            <p class="display-2 text-success bg-warning border border-dark mx-auto" id="sw" style="width:fit-content">Synonyms:</p>
         </div>
     </body>
 </html>
