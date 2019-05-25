@@ -12,3 +12,26 @@
 {
   text-align: center;
 }
+a:hover
+{
+  border: 3px solid orange;
+  border-radius: 10px;
+}
+a{
+  font-family: 'Yatra One', cursive;  
+}
+.sw1
+{
+  border: 6px solid rebeccapurple;
+  border-radius: 10px;
+  font-family: 'Yatra One', cursive;  
+}
+.sw:hover
+{
+  border: 6px solid orange;  
+}
+.sw{
+  border: 6px solid rebeccapurple;
+  border-radius: 10px;
+  font-family: 'Yatra One', cursive;
+}
