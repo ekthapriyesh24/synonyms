@@ -11,8 +11,25 @@ function httpGetAsync(theUrl, callback)
     xmlHttp.open("GET", theUrl, true); 
     xmlHttp.send(null);
 }
-var fi=[],i=1,json_obj;
+var fi=[],i=1,json_obj,kt=0;
 function add(){
+var ch1=document.getElementById("switch1").checked;
+var ch2=document.getElementById("switch2").checked;
+if(ch1==false && ch2==false){
+    kt=0;
+}
+else if(ch1==true && ch2==false)
+{
+    kt=5;
+}
+else if(ch1==false && ch2==true)
+{
+    kt=10;
+}
+else
+{   
+    kt=0;
+}
 var x=document.getElementById("word").value;
 var y="https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20190517T151428Z.57f3b2b9b67788aa.eea719a7b2556e8fbe8713d46583cabadafef188&lang=en-en&text="+x;
 httpGetAsync(y,function parser(vals)
@@ -34,7 +51,7 @@ function createlist(fi)
 var list = document.createElement("div");
 var att = document.createAttribute("class");
 var att2 = document.createAttribute("id");
-att.value = "list-group";
+att.value = "list-group sw1";
 att2.value = "tl";
 list.setAttributeNode(att2);
 list.setAttributeNode(att);
@@ -53,7 +70,7 @@ document.body.appendChild(list);
 }
 function printValues(obj) {
     for(var k in obj) {
-        if(i>=10)
+        if(i>kt)
         {
             return;
         }
