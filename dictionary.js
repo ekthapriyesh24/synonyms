@@ -1,6 +1,25 @@
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
+    var fff=document.createElement("div");
+    var att5 = document.createAttribute("id");
+    att5.value = "tl";
+    fff.setAttributeNode(att5);
+    document.body.appendChild(fff);
 });
+function allowDrop(ev)
+{
+    ev.preventDefault();    
+}
+function drag(ev)
+{
+    ev.dataTransfer.setData("text",ev.target.id);
+}
+function drop(ev)
+{
+    ev.preventDefault();
+    var data=ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+} 
 function httpGetAsync(theUrl, callback)
 {
     var xmlHttp = new XMLHttpRequest();
@@ -40,14 +59,12 @@ printValues(json_obj);
 createlist(fi);
 fi=[];
 i=1;
+kt=0;
 }
 function createlist(fi)
 {
-    if(document.getElementById("tl")!=null)
-    {
-        var f=document.getElementById("tl");
-        f.parentNode.removeChild(f);
-    }
+var f=document.getElementById("tl");
+f.parentNode.removeChild(f);
 var list = document.createElement("div");
 var att = document.createAttribute("class");
 var att2 = document.createAttribute("id");
